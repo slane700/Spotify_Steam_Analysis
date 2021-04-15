@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Data</title>
+
+    <!-- Bootstrap and Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!--<link rel="stylesheet" href="assets/css/d3Style.css">-->
+
+   <!-- <link rel="stylesheet"  href="style.css">-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <script type="text/javascript" src="static/js/app3.js"></script>
+
+    <!--FROM SAM-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.bootstrap4.min.css">
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <!-- Buttons -->
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js"></script>
+  
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="static/images/spotify.png" alt="logo" style="width:40px;height:40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="streams.html">Dashboard</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="data.html">Data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="glossary.html">Glossary</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--JUMBOTRON-->
+    <div class="jumbotron text-center">
+        <h3 class="display-3">Spotify Data</h3>
+        <a class="btn btn-success btn-md" href="data.html" role="button">By Year</a>
+        <a class="btn btn-success btn-md" href="dataStreams.html" role="button">By Streams</a>
+    </div>
+
+    <!--ENTER DATA TABLE-->
+    <div class="wrapper">
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+              <div class="navbar-header">
+              </div>
+          </div>
+      </nav>
+      <div class="hero text-center">
+          <h1>By Year</h1>
+      </div>
+      <div class="container-fluid">
+          <div class="row margin-top-50">
+              <div class="col-md-2">
+                <!--<div class="jumbotron">-->
+                    <aside class="filters">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Filter Search</div>
+                            <div class="panel-body">
+                                <form id="form">
+                                    <div class="form-group">
+                                        <ul class="list-group" id="filters">
+                                            <li class="filter list-group-item">
+                                                <label for="year">Enter a Year</label>
+                                                <input class="form-control" id="year" type="text" placeholder="2010">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group-vertical">
+                                        <button id="filter-btn" type="button" class="btn btn-primary">Filter Table</button>
+                                        <button id="filter-clear" type="button" class="btn btn-success">Clear Filters</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </aside>
+                <!--</div>-->
+              </div>
+              <div class="col-md-10">
+                  <div id="table-area" class="">
+                      <table id="table" class="table-hover table-striped">
+                          <thead>
+                              <tr>
+                                  <th class="table-head">Year</th>
+                                  <th class="table-head">Acousticness</th>
+                                  <th class="table-head">Danceability</th>
+                                  <th class="table-head">Duration_MS</th>
+                                  <th class="table-head">Energy</th>
+                                  <th class="table-head">Instrumentalness</th>
+                                  <th class="table-head">Liveness</th>
+                                  <th class="table-head">Loudness</th>
+                                  <th class="table-head">Speechiness</th>
+                                  <th class="table-head">Tempo</th>
+                                  <th class="table-head">Valence</th>
+                                  <th class="table-head">Popularity</th>
+                                  <th class="table-head">Key</th>
+                                  <th class="table-head">Mode</th>
+                              </tr>
+                          </thead>
+                          <tbody></tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+
+</html>

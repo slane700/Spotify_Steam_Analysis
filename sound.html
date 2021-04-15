@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sound</title>
+
+    <!-- Bootstrap and Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/d3Style.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <script src="https://unpkg.com/jeezy@1.13.1/lib/jeezy.min.js"></script>
+    <script type="text/javascript" src="static/js/app2.js"></script>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="static/images/spotify.png" alt="logo" style="width:40px;height:40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="streams.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data.html">Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="glossary.html">Glossary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   <!--JUMBOTRON-->
+   <div class="jumbotron text-center">
+        <h3 class="display-3">Spotify Dashboard</h3>
+        <a class="btn btn-success btn-md" href="streams.html" role="button">Streams</a>
+        <a class="btn btn-success btn-md" href="sound.html" role="button">Sound</a>
+    </div>
+
+    <!--DASHBOARD: SOUND-->
+    <div class="container-fluid">
+        <div class="row" style="margin-top:5%">
+            <div class = "col-lg-12">
+                <h3>Change in Audio Features Over Time</h3>
+                <p class="text-success">Filter by decade or view entire time period (1920-present) to view audio feature changes over time.</p>
+                <p>
+                    Audio features include acousticness, danceability, energy, instrumentalness, liveness, speechiness, and valance. 
+                    To learn more about the audio features, visit the <a href="glossary.html/"><b>Glossary Page</b></a>.
+                    There is a decrease in acousticness between 1960 and 1970 and an increase in energy and danceability. 
+                    There are several peaks in speechiness and instrumentalness from 1920 through 1950 then it appears to flatten out.
+                </p>
+            </div>
+        </div>
+        <div class="row" style="margin-top:3%">
+            <div class = "col-md-12">
+                <div class="card border-secondary mb-3" style="max-width: 8rem;">
+                    <select id="decade">
+                        <option value="-1">All</option>
+                        <option>2020</option>
+                        <option>2010</option>
+                        <option>2000</option>
+                        <option>1990</option>
+                        <option>1980</option>
+                        <option>1970</option>
+                        <option>1960</option>
+                        <option>1950</option>
+                        <option>1940</option>
+                        <option>1930</option>
+                        <option>1920</option>
+                    </select>
+                </div>
+                <div id="line"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="row" style="margin-top:5%">
+            <div class = "col-md-12">
+                <h3>Audio Feature Correlations</h3>
+                <p class="text-success">Hover over the heatmap to see the strength of the correlation by value. Those colored with yellow are of the strongest correlation 
+                    while dark purple displays the weakest.
+                </p>
+                <br>
+            </div>
+        </div>
+        <div class="row" style="margin-top:3%">
+            <div class = "col-md-8">
+                <div id="heatmap"></div>
+            </div>
+            <div class = "col-md-4">
+                <p> 
+                    Slight positive correlation between instrumentalness and acousticness, energy and danceability. 
+                    Slight negative correlation between danceability and acousticness, instrumentalness and danceability.
+                    Negative correlation between energy and acousticness, speechiness and energy, and energy and instumentalness. 
+                    <br>
+                    <br>
+                    No strong correlations between valence and acousticness, danceability, energy, liveness, or speechiness. 
+                    No strong correlations between speechiness and acousticness, danceability, instrumentalness, liveness, valence. 
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row" style="margin-top:5%">
+            <div class = "col-md-12">
+                <h3>Relationships between Audio Features</h3>
+                <p class="text-success"> Change the x-axis to see how additional audio features relate to popularity by year.
+                </p>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class = "col-md-12">
+                <p> 
+                    From the 1960s through 2000 there is a positive correlation between danceability and popularity. From 2000 through today 
+                    it appears that danceability has become less popular. 2021 appears to be an outlier possibly due to the year not being completed. 
+                    <br>
+                    <br>
+                    From the mid 1950s through today there is a positive correlation between energy and popularity. 2021 also appears to be an outlier. 
+                    <br>
+                    <br>
+                    No strong correlation between popularity and valance. There appears to be a cluster of data points in the middle of the 
+                    graphe and a cluster with very low popularity but a range of valence values. 
+                </p>
+            </div>
+        </div>
+        <div class="row" style="margin-top:3%">
+            <div class = "col-md-12">
+                <div id="scatter"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

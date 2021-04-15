@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Spotify</title>
+
+    <!-- Bootstrap and Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!--<link rel="stylesheet" href="assets/css/d3Style.css">-->
+
+   <!-- <link rel="stylesheet"  href="style.css">-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <script src="https://unpkg.com/jeezy@1.13.1/lib/jeezy.min.js"></script>
+    <!--<script type="text/javascript" src="static/js/app.js"></script>-->
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="static/images/spotify.png" alt="logo" style="width:40px;height:40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="streams.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data.html">Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="glossary.html">Glossary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--JUMBOTRON-->
+    <div class="jumbotron text-center">
+        <h3 class="display-3">Spotify</h3>
+    </div>
+
+    <div class= "container-fluid">
+        <div class="row" style="margin-top:5%">
+            <div class = "col-md-12">
+                <p>
+                    <img src="static/images/spotify.png" alt="logo" style="width:200px;height:200px" class="center"></img>
+                    <br>
+                </p>
+            </div>
+        </div>
+        <div class="row"> <!--style="margin-top:5%">-->
+            <div class = "col-md-12">
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">For our project, we investigated Spotify to determine whether sound has changed over time and who (which country)
+                        streams the most music. Our group created an interactive website with a Streams Dashboard and a Sound Dashboard.
+                        Our Streams Dashboard explores which country streams the most songs in addition to the top streams of 2020.
+                        Our Sound Dashboard analyzes the Audio Features (Acousticness, Danceability, Duration, Energy, Instrumentalness, Liveness,
+                        Loudness, Speechiness, Tempo, Valence, Popularity, Key and Mode.) Learn more about these features on our <a href="glossary.html/"><b>Glossary Page</b></a>.
+                        We've included the data tables we used for our dashboards with interactive filters. Through our analysis, we concluded
+                        that tracks based on their sound audio features have changed over time and that the United States streams the most tracks.</p>
+                  </blockquote>
+                  <br>
+            </div>
+        </div>
+        <div class="row"> <!--style="margin-top:5%">-->
+            <div class = "col-md-12">
+                <p>
+                    <img src="static/images/map.png" alt="Map" style="width:500px;height:450px" class="center"></img>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

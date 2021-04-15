@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Spotify</title>
+
+    <!-- Bootstrap and Bootswatch CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <!--<link rel="stylesheet" href="assets/css/d3Style.css">-->
+
+   <!-- <link rel="stylesheet"  href="style.css">-->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/d3-v6-tip@1.0.6/build/d3-v6-tip.js"></script>
+    <script src="https://unpkg.com/jeezy@1.13.1/lib/jeezy.min.js"></script>
+    <script type="text/javascript" src="static/js/app.js"></script>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="static/images/spotify.png" alt="logo" style="width:40px;height:40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="streams.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data.html">Data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="glossary.html">Glossary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--JUMBOTRON-->
+    <div class="jumbotron text-center">
+        <h3 class="display-3">Spotify Dashboard</h3>
+        <a class="btn btn-success btn-md" href="streams.html" role="button">Streams</a>
+        <a class="btn btn-success btn-md" href="sound.html" role="button">Sound</a>
+    </div>
+
+
+    <!--DASHBOARD: STREAMS-->
+    <div class="container-fluid">
+        <div class="row" style="margin-top:5%">
+            <div class = "col-md-12">
+                <h3>World Map of Countries by Number of Streams</h3>
+                <p class="text-success">Hover over a country to see the country name and its total number of streams.</p>
+            </div>
+        </div>
+        <div class="row" style="margin-top:2%">
+            <div class = "col-md-4">
+                <blockquote class="blockquote">
+                    <p class="lead">The United States is the country with the most streams at almost 16 billion streams.
+                        Cyprus is the country with the least streams at around 300 thousand streams.
+                        A current limitation is that not all countries are scored with streams.</p>
+                </blockquote>
+            </div>
+            <div class = "col-md-8">
+                <div id="map"></div> 
+            </div>
+        </div>
+        <hr>
+        <!--BAR CHART-->
+        <div class="row" style="margin-top:5%">
+            <div class = "col-md-12">
+                <h3>Streams of 2020</h3>
+                <p class="text-success">Filter bar char to view the Top 10, Top 20, Bottom 10, and Bottom 20 tracks by number of streams for 2020.</p>
+            </div>
+        </div>
+        <div class="row" style="margin-top:2%">
+            <div class = "col-md-8">
+                <div class="card border-secondary mb-3" style="max-width: 8rem;">
+                    <select id="data_columns">
+                        <option>Top 10</option>
+                        <option>Top 20</option>         
+                        <option>Bottom 10</option>
+                        <option>Bottom 20</option>   
+                    </select>
+                </div>
+                <div id="bar"></div>
+            </div>
+            <div class = "col-md-4">
+                <p class="lead">
+                    Blinding Lights by The Weeknd was the most streamed song in 2020.
+                    <br>
+                    <br>
+                    Kill This Love by BLACKPINK was the least streamed song out of the Top 100 week over week in 2020.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
