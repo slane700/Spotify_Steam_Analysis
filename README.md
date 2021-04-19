@@ -44,7 +44,7 @@ The Scatterplot highlights the relationships between the Audio Features of Popul
 - Speechiness has not increased over time while Danceability has increased over time.
 
 ### Contact:
-*Alex Arnold
-*Scott Frazier
-*Samantha Lane 
-*Jenette Smith
+* Alex Arnold
+* Scott Frazier
+* Samantha Lane: slane700@gmail.com
+* Jenette Smith
