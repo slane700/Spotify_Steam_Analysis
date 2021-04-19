@@ -1,6 +1,6 @@
 # Spotify Track Analysis Over Time
 
-## https://alexarnold630.github.io/SMU_Project2/Spotify/index.html
+## https://slane700.github.io/Spotify_Steam_Analysis/index.html
 
 ## Background
 Select a real-world dataset to analyze by using an interactive visualization dashboard.
@@ -37,14 +37,14 @@ The Audio Feature Heatmap is also filtered by the 1920-present time period and b
 ![Heatmap](static/images/heatmap.png)
 
 The Scatterplot highlights the relationships between the Audio Features of Popularity in relation to Danceability, Energy, and Valence over time. These features were investigated further with this visualization as these were the highest scored features over time as shown by the line chart. After the 1940s, danceability increases as a track's popularity increases showing a slightly positive correlation over time.  There is a positive correlation between energy and popularity over time highlighting that the most popular tracks are energetic. The year 2021 is currently an outlier as we do not have a complete dataset of this current year. Popularity and valence is scattered over time illustrating a no correlation.
-![Scatterplot](Spotify/static/images/bubble.png)
+![Scatterplot](Spotify_Steam_Analysis/static/images/bubble.png)
 
 ## Conclusions
 - The United States is the country that streams the most Spotify music.
 - Speechiness has not increased over time while Danceability has increased over time.
 
 ### Contact:
-Alex Arnold: alexnarnold630@gmail.com <br>
-Scott Frazier <br>
-Samantha Lane <br>
-Jenette Smith
+*Alex Arnold
+*Scott Frazier
+*Samantha Lane 
+*Jenette Smith
