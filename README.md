@@ -37,7 +37,7 @@ The Audio Feature Heatmap is also filtered by the 1920-present time period and b
 ![Heatmap](static/images/heatmap.png)
 
 The Scatterplot highlights the relationships between the Audio Features of Popularity in relation to Danceability, Energy, and Valence over time. These features were investigated further with this visualization as these were the highest scored features over time as shown by the line chart. After the 1940s, danceability increases as a track's popularity increases showing a slightly positive correlation over time.  There is a positive correlation between energy and popularity over time highlighting that the most popular tracks are energetic. The year 2021 is currently an outlier as we do not have a complete dataset of this current year. Popularity and valence is scattered over time illustrating a no correlation.
-![Scatterplot](Spotify_Steam_Analysis/static/images/bubble.png)
+![Scatterplot](/Users/samanthalane/Desktop/Spotify_Steam_Analysis/Spotify_Steam_Analysis/static/images/bubble.png)
 
 ## Conclusions
 - The United States is the country that streams the most Spotify music.
